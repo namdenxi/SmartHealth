@@ -1,0 +1,132 @@
+{% extends 'common/layout.html' %} {% block title %}Heart Prediction{%endblock%}
+{%block body %}
+<style>
+  .form-outline {
+  width: 120px; 
+  margin: 15px; 
+  display: inline-block;
+  }
+</style>
+<form method="POST" action="/Heart">
+  <div class="container">
+    <div class="row" style="margin-bottom: 50px">
+      <div class="p-5 text-center">
+        <h1 class="mb-3">Heart Prediction System</h1>
+        <hr />
+        <p class = 'text-danger'>{{ text_warning }}</p>
+      </div>
+      {% csrf_token %}
+
+      <div class='col-12'>
+        <!--Input-->
+        <div class="form-outline">
+          <input type="number" id="age" name="age" class="form-control" />
+          <label class="form-label" for="age">Age</label>
+        </div>
+        <!--Input-->
+        
+        <!--Input-->
+        <div class="form-outline">
+          <input type="number" id="sex" name="sex" class="form-control" />
+          <label class="form-label" for="sex">Sex</label>
+        </div>
+        <!--Input-->
+
+        <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="cp" name="cp" class="form-control" />
+        <label class="form-label" for="cp">CP</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="trestbps" name="trestbps" class="form-control" />
+        <label class="form-label" for="trestbps">Trestbps</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="chol" name="chol" class="form-control" />
+        <label class="form-label" for="chol">Chol</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="fbs" name="fbs" class="form-control" />
+        <label class="form-label" for="fbs">Fbs</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="restecg" name="restecg" class="form-control" />
+        <label class="form-label" for="restecg">Restecg</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="thalach" name="thalach" class="form-control" />
+        <label class="form-label" for="thalach">Thalach</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="exang" name="exang" class="form-control" />
+        <label class="form-label" for="exang">Exang</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="oldpeak" name="oldpeak" class="form-control" />
+        <label class="form-label" for="oldpeak">Oldpeak</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="slope" name="slope" class="form-control" />
+        <label class="form-label" for="slope">Slope</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="ca" name="ca" class="form-control" />
+        <label class="form-label" for="ca">Ca</label>
+        </div>
+        <!--Input-->
+
+         <!--Input-->
+       <div class="form-outline">
+        <input type="number" id="thal" name="thal" class="form-control" />
+        <label class="form-label" for="thal">Thal</label>
+        </div>
+        <!--Input-->
+
+      </div>
+      
+      <!--Submit-->      
+      <div class='col-12 text-center'>
+        <button type="Submit" class="btn btn-primary btnSubmit" style='margin: 30px 0'>Kiểm Tra</button>
+      </div>
+      <!--Submit-->
+    </div>
+  </div>
+</form>
+<!-- Toast -->
+<div class="toast fade {{show}}">
+  <div class="toast-header">
+    <strong class="mr-auto">Thông báo</strong>
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <div class="toast-body">{{content}}</div>
+</div>
+
+<!-- Toast -->
+{% endblock %}
